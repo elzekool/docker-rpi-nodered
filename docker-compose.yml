@@ -1,0 +1,13 @@
+version: '2'
+services:
+    nodered:
+        build: build
+        image: elzekool/rpi-nodered
+        ports:
+            - "1880:1880"
+        volumes:
+            - "${PWD}/data:/root/.node-red"
+        privileged: true
+        restart: "unless-stopped"
+
+
